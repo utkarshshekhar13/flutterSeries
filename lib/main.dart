@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
+import 'package:flutter_catalog/utils/routes.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 void main() {
@@ -25,10 +26,11 @@ class MyApp extends StatelessWidget {
         ),
       darkTheme: ThemeData(brightness: Brightness.light),
       // initialRoute: "/home",
+      debugShowCheckedModeBanner: false,
       routes: {
         "/":(context) => LoginPage(),
-        "/home":(context) => HomePage(), 
-        "/login":(context) => new LoginPage() //no need to put new keyword as dart is smart enough to know it is an object
+        MyRoutes.homeRoute:(context) => HomePage(), 
+        MyRoutes.loginRoute:(context) => new LoginPage() //no need to put new keyword as dart is smart enough to know it is an object
       },
     );
   }
