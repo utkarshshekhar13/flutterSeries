@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/pages/cart_page.dart';
 import 'package:flutter_catalog/pages/home_page.dart';
 import 'package:flutter_catalog/pages/login_page.dart';
 import 'package:flutter_catalog/utils/routes.dart';
@@ -27,7 +28,8 @@ class MyApp extends StatelessWidget {
       routes: {
         "/":(context) => LoginPage(),
         MyRoutes.homeRoute:(context) => HomePage(), 
-        MyRoutes.loginRoute:(context) => new LoginPage() //no need to put new keyword as dart is smart enough to know it is an object
+        MyRoutes.loginRoute:(context) => new LoginPage(), //no need to put new keyword as dart is smart enough to know it is an object
+        MyRoutes.cartRoute:(context) => CartPage()
       },
     );
   }
