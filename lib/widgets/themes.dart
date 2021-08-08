@@ -17,7 +17,8 @@ class MyTheme {
           textTheme: Theme.of(context).textTheme));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
-    brightness: Brightness.dark,
+      primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.white)),
+      brightness: Brightness.dark,
       fontFamily: GoogleFonts.poppins().fontFamily,
       cardColor: Colors.black,
       canvasColor: darkCreamColor,
@@ -27,7 +28,8 @@ class MyTheme {
           color: Colors.black,
           elevation: 0.0,
           iconTheme: IconThemeData(color: Colors.white),
-          textTheme: Theme.of(context).textTheme));
+          // textTheme: Theme.of(context).textTheme        
+  ));
 
   //Colors
   static Color creamColor = Color(0xfff5f5f5);
