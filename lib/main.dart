@@ -20,10 +20,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // addNumber(4, 5);
     return MaterialApp(
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       theme: MyTheme.lightTheme(context),
       darkTheme: MyTheme.darkTheme(context),
-      initialRoute: MyRoutes.homeRoute,
+      initialRoute: MyRoutes.loginRoute,
       debugShowCheckedModeBanner: false,
       routes: {
         "/":(context) => LoginPage(),

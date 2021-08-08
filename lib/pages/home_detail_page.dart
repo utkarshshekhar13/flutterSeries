@@ -15,11 +15,11 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.canvasColor,
       ),
-      backgroundColor: MyTheme.creamColor,
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-        color: Colors.white,
+        color: context.cardColor,
         child: ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
@@ -29,10 +29,10 @@ class HomeDetailPage extends StatelessWidget {
                     onPressed: (){}, 
                     child: "Add to cart".text.make(),
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(MyTheme.darkBluishColor),
+                      backgroundColor: MaterialStateProperty.all(context.theme.buttonColor),
                       shape: MaterialStateProperty.all(StadiumBorder())
                     ),
-                    ).wh(100,50)
+                    ).wh(120,50)
                 ],
               ).p32(),
       ),
@@ -50,7 +50,7 @@ class HomeDetailPage extends StatelessWidget {
               width: context.screenWidth,
               child:Column(
                 children: [
-                  catalog.name.text.xl4.color(MyTheme.darkBluishColor).bold.make(),
+                  catalog.name.text.xl4.color(context.accentColor).bold.make(),
                   catalog.desc.text.xl.make(),
                   10.heightBox,
                   "Labore justo kasd ut et sadipscing aliquyam. Sadipscing et ea et rebum voluptua, sed sanctus sit dolor amet sed magna et, et sit at ut sadipscing accusam et et aliquyam sit, sadipscing accusam takimata sit diam dolores at elitr tempor. Erat invidunt at stet amet voluptua stet et consetetur. Elitr."
@@ -59,7 +59,7 @@ class HomeDetailPage extends StatelessWidget {
                   .make().p8()
                 ],
               ).py32(),
-              color: Colors.white,)))
+              color: context.cardColor,)))
             
           
         ],),
