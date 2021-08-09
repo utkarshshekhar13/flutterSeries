@@ -1,6 +1,15 @@
 import 'dart:convert';
 
 class CatalogModel {
+
+  //Singleton Only one object will be created.
+  static final catModel = CatalogModel._internal();
+  CatalogModel._internal();
+  factory CatalogModel() => catModel;
+
+
+
+
   static List<Item> items = [];
 
   //get item by id

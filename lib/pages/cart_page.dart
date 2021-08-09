@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_catalog/models/cart.dart';
 import 'package:flutter_catalog/widgets/themes.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -28,20 +29,21 @@ class _CartTotal extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _cart = CartModel();
     return SizedBox(
       height: 200,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          "\$9999".text.xl5.color(context.theme.accentColor).make(),
+          "\$ ${_cart.totalPrice}".text.xl5.color(context.theme.accentColor).make(),
           30.widthBox,
           ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(context.theme.buttonColor)),
                   onPressed: () {
-                    ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: "Buying not supported yet".text.make()));
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: "Buying not supported yet".text.make()));
                   },
                   child: "Buy".text.white.make())
               .w32(context)
@@ -59,6 +61,8 @@ class _CartList extends StatefulWidget {
 }
 
 class __CartListState extends State<_CartList> {
+  final _cart = CartModel();
+
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
@@ -68,9 +72,9 @@ class __CartListState extends State<_CartList> {
           icon: Icon(Icons.remove_circle_outline),
           onPressed: () {},
         ),
-        title: "Item 1".text.make(),
+        title: _cart.items[index].name.text.make(),
       ),
-      itemCount: 5,
+      itemCount: _cart.items?.length,
     );
   }
 }

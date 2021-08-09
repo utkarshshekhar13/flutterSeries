@@ -1,6 +1,11 @@
 import 'package:flutter_catalog/models/catalog.dart';
 
 class CartModel {
+  //Singleton Only one object will be created.
+  static final cartModel = CartModel._internal();
+  CartModel._internal();
+  factory CartModel() => cartModel;
+
   //catalog field
   late CatalogModel _catalog;
 
