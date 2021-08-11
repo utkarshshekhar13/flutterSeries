@@ -4,6 +4,7 @@ import 'package:velocity_x/velocity_x.dart';
 
 class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
+      shadowColor: Colors.white,
       primarySwatch: Colors.deepPurple,
       cardColor: Colors.white,
       canvasColor: creamColor,
@@ -17,6 +18,7 @@ class MyTheme {
           textTheme: Theme.of(context).textTheme));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
+      shadowColor: Colors.black,
       primaryTextTheme: TextTheme(headline6: TextStyle(color: Colors.white)),
       brightness: Brightness.dark,
       fontFamily: GoogleFonts.poppins().fontFamily,

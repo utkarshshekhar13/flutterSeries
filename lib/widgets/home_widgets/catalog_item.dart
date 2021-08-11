@@ -12,9 +12,7 @@ class CatalogItem extends StatelessWidget {
   const CatalogItem({Key? key, required this.catalog}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return VxBox(
-        child: Row(
-      children: [
+    var children2 = [
         Hero(
             tag: Key(catalog.id.toString()),
             child: CatalogImage(image: catalog.image)),
@@ -35,9 +33,16 @@ class CatalogItem extends StatelessWidget {
               ],
             ).pOnly(right: 8.0)
           ],
-        ))
-      ],
-    )).color(context.cardColor).rounded.square(150).make().py16();
+        ).p(context.isMobile ? 0 : 8)
+        )
+      ];
+    return VxBox(
+        child: context.isMobile ? Row(
+      children: children2,
+    ) : Column(
+      children: children2
+    )
+    ).color(context.cardColor).rounded.square(150).make().py16();
   }
 }
 

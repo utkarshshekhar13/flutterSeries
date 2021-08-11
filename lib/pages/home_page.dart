@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart';
 import 'package:flutter_catalog/core/store.dart';
 import 'package:flutter_catalog/models/cart.dart';
 import 'package:flutter_catalog/utils/routes.dart';
@@ -62,7 +62,7 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.white,
                 ),
               ).badge(
-                  color: Vx.red500,
+                  color: Colors.white,
                   size: 22,
                   count: _cart.items.length,
                   textStyle: TextStyle(
